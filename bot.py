@@ -223,7 +223,8 @@ def handle_my_stat(message: Message):
                 message.chat.id,
                 f"Мой друг <b>{message.chat.first_name}</b>!\n\n"
                 f"Попытка №<b>{Users[user_id]['attempts'] - 1}</b>\n"
-                f"Результат так себе: <b>0</b> из <b>{Q_MAX}</b>\n"
+                f"Результат так себе: <b>{random.randint(0, 4)}</b> "
+                f"из <b>{Q_MAX}</b>\n"
                 f"Диагноз: <b>вы - гуманитарий!</b>"
                 f" 😂 🤣 😆\n\n",
                 parse_mode="HTML")
