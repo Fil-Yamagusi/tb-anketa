@@ -7,6 +7,7 @@
     fil_fc_math_test_bot
     6935069653:AAG9ml7xd6ldG9TMyu2wc8lVoCgosJz3nRo
     https://t.me/fil_fc_math_test_bot
+    https://github.com/Fil-Yamagusi/TB-anketa
 """
 
 from lists import *
@@ -64,8 +65,7 @@ def generate_record_table() -> None:
         for i in range(1, 6):
             Settings["record_table"].append(
                 f"<b>{i}</b>. Telegram user "
-                f"#{random.randint(2124501689-1000000,
-                                   2124501689+1000000)}: "
+                f"#{random.randint(2124501689-1000000, 2124501689+1000000)}: "
                 f" <b>{100 - i * 6 - random.randint(-3, 3)}</b>%"
             )
 
@@ -240,8 +240,8 @@ def handle_my_stat(message: Message):
             parse_mode="HTML")
     bot.send_message(
         message.chat.id,
-        f"<b>TOP-5 рекордов этого часа:</b>\n\n"
-        f"{"\n".join(Settings['record_table'])}",
+        f"<b>TOP-5 рекордов этого часа:</b>\n\n" +
+        '\n'.join(Settings['record_table']),
         parse_mode="HTML",
         reply_markup=markup)
 
