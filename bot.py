@@ -24,7 +24,7 @@ bot = TeleBot(TOKEN)
 
 # Меню с предложением тестирования
 markup = ReplyKeyboardMarkup(
-    row_width=2)
+    row_width=2, resize_keyboard=True)
 NEW_TEST_COMMAND = "new_test"
 NEW_TEST_MENU = "♨️ Новый тест"
 RESUME_COMMAND = "resume"
@@ -34,7 +34,7 @@ markup.add(
 
 # Меню с вариантами ответа (от 0 до 9)
 markupNumbers = ReplyKeyboardMarkup(
-    row_width=10)
+    row_width=10, resize_keyboard=True)
 digits = {
     1: "1️⃣", 2: "2️⃣", 3: "3️⃣", 4: "4️⃣", 5: "5️⃣",
     6: "6️⃣", 7: "7️⃣", 8: "8️⃣", 9: "9️⃣", 0: "0️⃣",
@@ -43,7 +43,7 @@ markupNumbers.add(* digits.values())
 
 # Меню с предложением посмотреть свои и чужие результаты
 markupStat = ReplyKeyboardMarkup(
-    row_width=2)
+    row_width=2, resize_keyboard=True)
 MY_STAT_COMMAND = "my_stat"
 MY_STAT_MENU = "〽️ Мой результат"
 BEST_COMMAND = "best"
@@ -190,8 +190,8 @@ def handle_answer(message: Message):
                 message.chat.id,
                 f"В тесте {Q_MAX + 1} вопросов, но результат очевиден... "
                 f"Не буду вас больше мучить.\n\n"
-                f"Можете посмотреть свой результат /my_stat\n"
-                f"и таблицу чемпионов этого часа /best",
+                f"Посмотрите свой результат /my_stat\n"
+                f"и TOP-5 чемпионов этого часа /best",
                 parse_mode="HTML",
                 reply_markup=markupStat)
         else:
