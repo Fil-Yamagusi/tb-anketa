@@ -225,12 +225,12 @@ def handle_my_stat(message: Message):
                 f"Попытка №<b>{Users[user_id]['attempts'] - 1}</b>\n"
                 f"Результат так себе: <b>0</b> из <b>{Q_MAX}</b>\n"
                 f"Диагноз: <b>вы - гуманитарий!</b>"
-                f"😂 🤣 😆\n\n",
+                f" 😂 🤣 😆\n\n",
                 parse_mode="HTML")
         else:
             bot.send_message(
                 message.chat.id,
-                f"Вы ещё не завершили тест! /resume\n\n",
+                f"Вы ещё не завершили эту попытку пройти тест! /resume\n\n",
                 parse_mode="HTML")
     else:
         bot.send_message(
